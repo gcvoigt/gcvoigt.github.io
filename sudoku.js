@@ -197,7 +197,7 @@ function detachNumbers(cell){
         // clear previus detach
         document.getElementById(item.id).classList.remove('number-detach');
 
-        if(number == valueCell){
+        if((number == valueCell) && (number != '')){
             document.getElementById(item.id).classList.add('number-detach');
         }
     });
