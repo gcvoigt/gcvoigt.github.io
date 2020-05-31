@@ -80,6 +80,10 @@ footer{
     color:#5c2094;
 }
 
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .groupcell_g{
     background-color: rgb(230, 230, 230, 0.8);
 }
