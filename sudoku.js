@@ -155,6 +155,9 @@ function initialNumbers(level){
             // sets that input in the board with the number
             document.getElementById(target).value = num;
 
+            // give some detache to this number
+            document.getElementById(target).style.fontWeight = 'bold';
+
             //avoid editing filled cell
             document.getElementById(target).setAttribute('readonly','readonly');
         }
@@ -165,7 +168,7 @@ function initialNumbers(level){
     runningTimer = setInterval(startTimer, 1000);
 }
 
-// function to clear the board
+// function to clear the board e retrive empty cell style
 
 function cleanBoard(){
     [...document.querySelectorAll('.cell')].forEach(function(item) {
@@ -173,6 +176,30 @@ function cleanBoard(){
 
         document.getElementById(id).value = '';
         document.getElementById(id).removeAttribute('readonly');
+        document.getElementById(id).style.fontWeight = '400';
+        document.getElementById(id).style.color = '#5c2094';
+    });
+}
+
+// detach cells with same number of focused cell
+
+function detachNumbers(cell){
+
+    let focusedCell = document.getElementById(cell);
+
+    let valueCell = focusedCell.firstChild.value;
+
+    [...document.querySelectorAll('.cell')].forEach( function(item) {
+
+        let id = item.firstChild.id;
+        let number = document.getElementById(id).value;
+
+        // clear previus detach
+        document.getElementById(item.id).classList.remove('number-detach');
+
+        if(number == valueCell){
+            document.getElementById(item.id).classList.add('number-detach');
+        }
     });
 }
 
@@ -185,6 +212,7 @@ function lightCells(celula){
     let x = celula.charAt(1);
     let y = celula.charAt(2);
 
+    detachNumbers(celula);
 
     for(let r = 0; r < 9; r++){
         for(let c = 0; c < 9; c++){
@@ -348,15 +376,12 @@ function shuffle(arr) {
 
 function showMetheTrue(){
     delayActionDelete(0);
-    setTimeout(function(){
-        delayActionFill(0);
-    },1000);
 }
 
 // delete numbers inputeds on board
 
 function delayActionDelete(counter){
-    if(counter <= 80){
+    if(counter < 81){
         setTimeout(function(){
             let target = document.getElementById(listArray[counter].id);
             if(!target.firstChild.hasAttribute('readonly')){
@@ -365,6 +390,9 @@ function delayActionDelete(counter){
             counter++;
             delayActionDelete(counter);
         },10);
+    }else{
+        // call next step
+        delayActionFill(0);
     }
 }
 
