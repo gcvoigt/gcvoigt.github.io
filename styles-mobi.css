@@ -1,0 +1,242 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+*:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 10vh 65vh 25vh;
+}
+
+header{
+    background-color: transparent;
+    display: grid;
+}
+
+main{
+    background-color: transparent;
+    display: grid;
+}
+
+aside{
+    background-color: transparent;
+    grid-row: 3;
+    display: grid;
+}
+
+#nameGame{
+    justify-self: center;
+    align-self: center;
+    width: 20vh;
+}
+
+.board{
+    background: rgb(242,58,2);
+    background: linear-gradient(343deg, rgba(242,58,2,1) 12%, rgba(11,11,177,1) 47%, rgba(255,209,0,1) 85%);
+    display: grid;
+    height: 64vh;
+    width: 64vh;
+    grid-template-columns: repeat(9, auto);
+    grid-template-rows: repeat(9, auto);
+    grid-gap: 3px;
+    padding: 5px;
+    justify-self: center;
+}
+
+.cell{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.board > div > input{
+    text-align: center;
+    border: none;
+    font-size: 3vh;
+    width: 100%;
+    background: transparent;
+    color:#5c2094;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.groupcell_g{
+    background-color: rgb(230, 230, 230, 0.8);
+}
+
+.groupcell_w{
+    background-color: #fdfdfd;
+}
+
+.detach{
+    box-shadow: inset 0 0 15px #b674db;
+}
+
+.cell-detach{
+    box-shadow: inset 0 0 25px #a62cec;
+}
+
+.number-detach{
+    box-shadow: inset 0 0 25px #4e59f0;
+}
+
+.dashboard{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: 2fr 3fr;
+    width: 64vh;
+    height: 100%;
+    justify-self: center;
+}
+
+.dashboard p, h2{
+    color: #640c7a;
+    margin: 7px 0;
+}
+
+.dashboard p{
+    font-size: 2vh;
+}
+
+h2{font-size: 2vh;}
+
+.time{
+    padding: 0 0 0 20px;;
+}
+
+.timeCounter{
+    font-size: 3.7vh;
+    line-height: 3.7vh;
+    color: darkgray !important;
+}
+
+.difficulty-selector{
+    box-sizing: border-box;
+    grid-column: 1 / 6;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+.difficulty-selector h2{grid-column: 1 / 1; grid-row: 1;}
+.difficulty-selector p{grid-column: 2 / 2; grid-row: 1;}
+
+
+
+.button{
+    display: grid;
+    height: 4vh;
+    width: auto;
+    justify-items: center;
+    align-items: center;
+    border-radius: 1vh;
+    margin: 1vh 0 1vh 0;
+    color: #fff;
+    font-size: 1.7vh;
+    padding: 8px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    grid-row: 2;
+    background: rgb(24,11,238);
+    background: linear-gradient(341deg, rgba(24,11,238,1) 0%, rgba(66,66,255,1) 0%, rgba(226,28,255,1) 100%);
+}
+
+#easy{grid-column: 1 / 2;}
+#medium{grid-column: 2 / 3;}
+#hard{grid-column: 3 / 4;}
+#vhard{grid-column: 4 / 5;}
+
+.button:hover{
+    opacity: 0.7;
+}
+
+.button::before{
+    font-size: 1.3vh;
+}
+
+.give-up{
+    display: grid;
+    grid-column: 4 / 6;
+    grid-row: 1;
+    justify-items: flex-end;
+    align-items: flex-end;
+    padding-top: 1vh;
+}
+
+.give-up > div{
+    background: linear-gradient(0deg, rgba(134,56,56,1) 0%, rgba(221,5,5,1) 54%, rgba(203,35,157,1) 100%);
+}
+
+.give-up p{
+    font-size: 1.4vh;
+    margin: 0;
+}
+
+#result{
+    position: absolute;
+    width: 64vh;
+    height: 35vh;
+    top: 32vh;
+    left: calc(50% - 32vh);
+    background-color: rgb(238, 237, 237, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 46px -15px rgba(140,52,140,1);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 6vh 3vh;
+    z-index: 2;
+    display: none;
+}
+
+.border-result{
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+#result h1{
+    font-size: 5vh;
+    line-height: 4vh;
+    margin: 0.5vh;
+    background: -webkit-linear-gradient(#743ad5, #d53a9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#bt-close{
+    cursor: pointer;
+    color: #fff;
+    box-sizing: border-box;
+    justify-self: center;
+    align-self: end;
+    border-radius: 1vh;
+    font-size: 3vh;
+    padding: 1.5vh;
+    height: 6vh;
+    width: 18vh;
+    background: rgb(24,11,238);
+    background: linear-gradient(341deg, rgba(24,11,238,1) 0%, rgba(66,66,255,1) 0%, rgba(226,28,255,1) 100%);
+}
+
+#bt-close:hover{
+    opacity: .8;
+}
