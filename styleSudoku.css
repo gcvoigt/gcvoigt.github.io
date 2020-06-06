@@ -213,6 +213,7 @@ h2{font-size: 3vh;}
     line-height: 4vh;
     margin: 0.5vh;
     background: -webkit-linear-gradient(#743ad5, #d53a9d);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
