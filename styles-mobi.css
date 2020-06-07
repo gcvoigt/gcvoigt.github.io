@@ -17,7 +17,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .container{
     display: grid;
-    grid-template-rows: 10vh 65vh 25vh;
+    grid-template-rows: 10vh 55vh 35vh;
 }
 
 header{
@@ -53,6 +53,7 @@ aside{
     grid-gap: 3px;
     padding: 5px;
     justify-self: center;
+    align-self: center;
 }
 
 .cell{
