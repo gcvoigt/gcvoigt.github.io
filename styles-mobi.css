@@ -192,10 +192,10 @@ h2{font-size: 2vh;}
 
 #result{
     position: absolute;
-    width: 64vh;
+    width: 50vh;
     height: 35vh;
     top: 32vh;
-    left: calc(50% - 32vh);
+    left: calc(50% - 25vh);
     background-color: rgb(238, 237, 237, 0.9);
     backdrop-filter: blur(10px);
     box-shadow: 10px 10px 46px -15px rgba(140,52,140,1);
