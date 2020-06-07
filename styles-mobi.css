@@ -46,8 +46,8 @@ aside{
     background: rgb(242,58,2);
     background: linear-gradient(343deg, rgba(242,58,2,1) 12%, rgba(11,11,177,1) 47%, rgba(255,209,0,1) 85%);
     display: grid;
-    height: 64vh;
-    width: 64vh;
+    height: 50vh;
+    width: 50vh;
     grid-template-columns: repeat(9, auto);
     grid-template-rows: repeat(9, auto);
     grid-gap: 3px;
@@ -99,8 +99,8 @@ input[type=number] {
 .dashboard{
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-template-rows: 2fr 3fr;
-    width: 64vh;
+    grid-template-rows: 2fr 5fr;
+    width: 50vh;
     height: 100%;
     justify-self: center;
 }

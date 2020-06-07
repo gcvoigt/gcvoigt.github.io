@@ -354,7 +354,7 @@ function stopTimer(){
     }
 }
 
-// it's justo shows 00 in time counter when game is reseted
+// it's just shows 00 in time counter when game is reseted
 
 function zeroCounter(){
     document.getElementById("hour").innerHTML = '00';
